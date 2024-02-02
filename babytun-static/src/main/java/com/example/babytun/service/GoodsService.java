@@ -1,13 +1,7 @@
 package com.example.babytun.service;
 
-import com.example.babytun.dao.GoodsCoverDAO;
-import com.example.babytun.dao.GoodsDAO;
-import com.example.babytun.dao.GoodsDetailDAO;
-import com.example.babytun.dao.GoodsParamDAO;
-import com.example.babytun.entity.Goods;
-import com.example.babytun.entity.GoodsCover;
-import com.example.babytun.entity.GoodsDetail;
-import com.example.babytun.entity.GoodsParam;
+import com.example.babytun.dao.*;
+import com.example.babytun.entity.*;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +19,8 @@ public class GoodsService {
     private GoodsDetailDAO goodsDetailDAO;
     @Resource
     private GoodsParamDAO goodsParamDAO;
+    @Resource
+    private EvaluateDAO evaluateDAO;
 
     /**
      * 根据商品id查询商品信息
@@ -52,5 +48,10 @@ public class GoodsService {
     @Cacheable(cacheNames = "params", key = "#goodsId")
     public List<GoodsParam> getGoodsParams(Long goodsId) {
         return goodsParamDAO.findByGoodsId(goodsId);
+    }
+
+    @Cacheable(cacheNames = "evaluates", key = "#goodsId")
+    public List<Evaluate> getEvaluates(Long goodsId) {
+        return evaluateDAO.findByGoodsId(goodsId);
     }
 }

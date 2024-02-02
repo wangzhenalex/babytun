@@ -95,6 +95,7 @@
             <ul class="layui-tab-title">
                 <li class="layui-this">产品详情</li>
                 <li>产品参数</li>
+                <li>评论</li>
             </ul>
             <div class="layui-tab-content">
                 <div class="layui-tab-item layui-show bb-description layui-col-xs8 layui-col-xs-offset2">
@@ -118,6 +119,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="layui-tab-item layui-col-xs8 layui-col-xs-offset2" id="divEvaluate">
+
+                </div>
             </div>
         </div>
     </div>
@@ -128,7 +132,13 @@
     ;!function () {
         var layer = layui.layer
             , form = layui.form;
-
+        var $  = layui.$;//$就是jquery的别名，layui内置了jquery
+        $.getJSON("/evaluate/${goods.goodsId?string('0')}" , function(json){
+            for(var i = 0 ; i < json.length ; i++){
+                var eva = json[i];
+                $("#divEvaluate").append("<h2>" + eva.createTime + " 宝妈评价道：" + eva.content + "</h2><hr>");
+            }
+        })
     }();
 </script>
 <script>

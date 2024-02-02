@@ -1,5 +1,6 @@
 package com.example.babytun.controller;
 
+import com.example.babytun.entity.Evaluate;
 import com.example.babytun.entity.Goods;
 import com.example.babytun.service.GoodsService;
 import freemarker.template.Configuration;
@@ -66,5 +67,11 @@ public class GoodsController {
         for (Goods goods : all) {
             doStatic(goods.getGoodsId());
         }
+    }
+
+    @ResponseBody
+    @GetMapping("/evaluate/{gid}")
+    public List<Evaluate> getEvaluates(@PathVariable("gid") Long goodsId) {
+        return goodsService.getEvaluates(goodsId);
     }
 }
