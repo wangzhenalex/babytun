@@ -64,10 +64,10 @@
         </div>
         <div class="layui-col-xs8" style="padding: 10px">
             <ul class="bb-info">
-				<li class="layui-bg-red" style="padding:10px;line-height: 30px">
+                <li class="layui-bg-red" style="padding:10px;line-height: 30px">
                     <h2>活动结束倒计时<span id="ds">0天4时39分59秒</span></h2>
                 </li>
-				
+
                 <li>
                     <h2>哇爱 孕产妇入院专用待产包【尖叫升级】12件套送8件升级为20件套待产包【专家型】</h2>
                 </li>
@@ -79,12 +79,12 @@
                 <li style="color: darkgrey">
                     <span>宝宝团价：</span><span style="font-size: 26px;color: orange;font-weight: bold">¥19.8</span><span
                         style="text-decoration: line-through">¥78.0</span>
-					<span>,库存只有<span style="font-size: 26px;color: orange;font-weight: bold">8</span>件啦,每人限购一件</span>
+                    <span>,库存只有<span style="font-size: 26px;color: orange;font-weight: bold">8</span>件啦,每人限购一件</span>
                 </li>
-				<li>
-                    
+                <li>
+
                 </li>
-                
+
                 <li>
                     <button class="layui-btn layui-btn-normal layui-bg-red" id="btnSecKill">立即抢购</button>
                 </li>
@@ -164,7 +164,7 @@
 
         var $ = layui.$;
         $("#btnSecKill").click(function () {
-            $.getJSON("/seckill?psid=1&userid=u03a1dsa13321" ,function(json){
+            $.getJSON("/seckill?psid=1&userid=u03a1d22sa13321" ,function(json){
                 if(json.code == "0"){
                     alert("恭喜你，得到抢购的资格，快去下单吧");
                     var orderNo = json.data.orderNo;
@@ -186,18 +186,18 @@
 </script>
 
 <script>
-layui.use('util', function(){
-  var util = layui.util;
-  
-  //示例
-  var endTime = new Date().getTime() + (3600 * 1000 * 24) //假设为结束日期
-  ,serverTime = new Date().getTime(); //假设为当前服务器时间，这里采用的是本地时间，实际使用一般是取服务端的
-   
-  util.countdown(endTime, serverTime, function(date, serverTime, timer){
-    var str = date[0] + '天' + date[1] + '时' +  date[2] + '分' + date[3] + '秒';
-    layui.$('#ds').html(str);
-  });
-});
+    layui.use('util', function(){
+        var util = layui.util;
+
+        //示例
+        var endTime = new Date().getTime() + (3600 * 1000 * 24) //假设为结束日期
+            ,serverTime = new Date().getTime(); //假设为当前服务器时间，这里采用的是本地时间，实际使用一般是取服务端的
+
+        util.countdown(endTime, serverTime, function(date, serverTime, timer){
+            var str = date[0] + '天' + date[1] + '时' +  date[2] + '分' + date[3] + '秒';
+            layui.$('#ds').html(str);
+        });
+    });
 </script>
 
 
