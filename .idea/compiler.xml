@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="babytun-seckill" />
         <module name="babytun-redis" />
         <module name="babytun" />
         <module name="seckill-sample" />

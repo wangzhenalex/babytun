@@ -1,0 +1,16 @@
+mybatis:
+    mapper-locations: classpath:mappers/*xml
+    configuration:
+        map-underscore-to-camel-case: true
+server:
+    port: 8080
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/babytun?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        username: root
+        password: 12345678
+    redis:
+        host: localhost
+        port: 6379
+        database: 0

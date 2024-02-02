@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/babytun-redis/pom.xml" />
         <option value="$PROJECT_DIR$/babytun-static/pom.xml" />
         <option value="$PROJECT_DIR$/seckill-sample/pom.xml" />
+        <option value="$PROJECT_DIR$/babytun-seckill/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
