@@ -12,7 +12,7 @@ public class Order {
     private String recvAddress;
     private String recvMobile;
     private Float postage;
-    private Float amout;
+    private Float amount;
     private Date createTime;
 
     public Long getOrderId() {
@@ -79,12 +79,12 @@ public class Order {
         this.postage = postage;
     }
 
-    public Float getAmout() {
-        return amout;
+    public Float getAmount() {
+        return amount;
     }
 
-    public void setAmout(Float amout) {
-        this.amout = amout;
+    public void setAmount(Float amount) {
+        this.amount = amount;
     }
 
     public Date getCreateTime() {
