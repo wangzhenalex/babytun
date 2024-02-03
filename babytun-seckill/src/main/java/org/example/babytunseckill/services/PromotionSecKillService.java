@@ -58,13 +58,13 @@ public class PromotionSecKillService {
     public String sendOrderToQueue(String userid) {
         System.out.println("准备向队列发送信息");
         //订单基本信息
-//        Map data = new HashMap();
-//        data.put("userid", userid);
-//        String orderNo = UUID.randomUUID().toString();
-//        data.put("orderNo", orderNo);
-//        //附加额外的订单信息
-//        rabbitTemplate.convertAndSend("exchange-order" , null , data);
-        return "orderNo";
+        Map data = new HashMap();
+        data.put("userid", userid);
+        String orderNo = UUID.randomUUID().toString();
+        data.put("orderNo", orderNo);
+        //附加额外的订单信息
+        rabbitTemplate.convertAndSend("exchange-order" , null , data);
+        return orderNo;
     }
 
     public Order checkOrder(String orderNo){

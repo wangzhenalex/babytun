@@ -5,6 +5,13 @@ mybatis:
 server:
     port: 8080
 spring:
+    freemarker:
+        cache: false
+        charset: utf-8
+        expose-request-attributes: true
+        expose-session-attributes: true
+        suffix: .ftl
+        template-loader-path: classpath:/templates/
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://localhost:3306/babytun?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
@@ -14,3 +21,15 @@ spring:
         host: localhost
         port: 6379
         database: 0
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+        virtual-host: /
+        listener:
+            simple:
+                # 定义消费者的并发数量
+                prefetch: 10
+                # 消费者的ack模式
+                acknowledge-mode: manual
