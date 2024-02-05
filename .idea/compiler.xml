@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="babytun-seckill" />
         <module name="babytun-redis" />
-        <module name="babytun" />
         <module name="seckill-sample" />
+        <module name="babytun-lb" />
         <module name="babytun-static" />
       </profile>
     </annotationProcessing>
