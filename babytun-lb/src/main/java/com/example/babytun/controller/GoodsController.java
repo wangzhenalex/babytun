@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,10 +23,10 @@ public class GoodsController {
     @Value("${server.port}")
     private String port;
 
-    @GetMapping("/goods")
-    public ModelAndView showGoods(Long gid) {
+    @GetMapping("/goods-{gid}.html")
+    public ModelAndView showGoods(@PathVariable("gid") Long gid) {
         logger.info("port:" + port);
-        ModelAndView mav = new ModelAndView("goods1");
+        ModelAndView mav = new ModelAndView("goods");
         Goods goods = goodsService.getGoods(gid);
         mav.addObject("goods", goods);
         mav.addObject("covers", goodsService.getGoodsCovers(gid));
